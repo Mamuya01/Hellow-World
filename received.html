@@ -1,0 +1,46 @@
+<! DOCTYPE html>
+	<html>
+	<head><title>sanaSua</title>
+	</head>
+	<body>
+	<div class="container">
+		<h3 class = "text-center">RealTime Message board</h3>
+		<div class="jumbotron">
+			<h2 id="lblcurrentMessage" class="text-center"></h2>
+		</div>
+		<div class="form-group">
+		<input type="text" id="textNewMessage" class="forrm-control">
+		<button id="btUpdateMessage" class="btn-btn-primary">Updated </button>
+		</div>
+	</div>
+	
+		
+	<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+	<script>
+		var lbCurrentMessage=document.getElementById('lblCurrentMessage');
+		var textNewMessage=document.getElementById('textNewMessage');
+		var btUpdateMessage=document.getElementById('btUpdateMessage');
+		var rootRef=new Firebase("https://console.firebase.google.com/project/sanasua-2f98c/database/data");
+		var currentMessageRef=rootRef.child('currentMessage');
+		btUpdateMessage.addEventListener('click', function()){
+			currentMessageRef.set(textNewMessage.value);
+			textNewMessage.value="";
+		)}
+		currentMessageRef.on('value', function(snapshot){
+			lblcurrentMessage.innerText=snapshot.value();
+		})
+	<script>
+	  // Initialize Firebase
+	  var config = {
+		apiKey: "AIzaSyBT4IUZvIgrvzMeW4ilLSlFVJ9rpM-unr8",
+		authDomain: "sanasua-2f98c.firebaseapp.com",
+		databaseURL: "https://sanasua-2f98c.firebaseio.com",
+		storageBucket: "",
+	  };
+	  firebase.initializeApp(config);
+	  
+	</script>
+
+	</body>
+</html>
+    

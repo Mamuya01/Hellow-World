@@ -1,0 +1,72 @@
+<! DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8">
+		<title>Sua Project</title>
+		<link type="text/css" rel="stylesheet" href="sua.css">
+		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+		
+		 <marquee behavior="alternate"><h1>SOKOINE UNIVERSITY OF AGRICULTURE INSURANCE<h1></marquee>
+		 
+	</head>
+	<body>
+	
+	<nav id="navSUA"></nav><!.... links to create Menu...!>
+	
+	<div id="login"><h1>Welcome to Our SUA Insurance</h1>
+		<!..Creation of login form!..>
+		
+		<form id="f1" method="post">
+			<fieldset>
+				<legend id="legend">LogIn</legend>
+			
+			UserName<input type="text" name="fname" value=" "><br><br>
+			Password<input type="password" name="psw" value=" " ><br>
+			<button onclick="formList()">Save</button>
+			
+		</form> 
+		<p id="nana"></p>	
+		<form method="link" action="signUp.html">
+			Don't you have an Account?<input type="submit" value="Register Here">
+		</form>
+
+		<script>
+		
+		function formList() {
+			var x = document.forms["f1"];
+			var text = [];
+			var i;
+		
+			for (i = 0; i < x.length ;i++) {
+				text += x.elements[i].value;		
+			}
+			document.getElementById("nana").innerHTML +=Date().toString;
+
+			document.getElementById("nana").innerHTML +=text;		
+		}
+		
+		</script>
+	
+	</div>	
+		  <footer id="copyRight">
+		 <script src="su.js"></script>
+        
+		<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase.js"></script>
+		
+	<script>
+	  // Initialize Firebase
+		  var config = {
+			apiKey: "AIzaSyA0Th3Ihi3WBdbPccYKlM65Y4g2YAsSVE4",
+			authDomain: "suaproject-df561.firebaseapp.com",
+			databaseURL: "https://suaproject-df561.firebaseio.com",
+			storageBucket: ""
+		  };
+		  firebase.initializeApp(config);
+		  var login=document.getElementById('f1');
+		  var dbRef=firebase.suaproject-df561().ref().child('text');
+		  dbRef.on("value".snap=>login.innerText=snap.value());
+		  document.getElementById('f1').value=config;
+	</script>
+	
+	</body>
+</html>

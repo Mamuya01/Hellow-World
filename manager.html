@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <title>Bills</title>
+	</head>
+		<link type="text/css" rel="stylesheet" href="sua.css">
+
+	<body>
+	<header>Welcome to Our SOKOINE UNIVERSITY Insurance</header>
+		<div id="main">
+			
+			<header>Summary for Bills Contribution</header>
+			<p><button type="submit">Service Made</button></p>
+			<p><button type="submit">Print Report</button></p>
+			<p>Bills:</p>
+		</div>
+			<form id="f1">
+			
+			UserName:<input type="text" name="fname" value=" "><br>
+			
+		</form> 
+
+		<button onclick="formList()">Save</button>
+		
+		<p id="nana"></p>
+		
+		
+		<script>
+		
+		function formList() {
+			var x = document.forms["f1"];
+			var text = [];
+			var i;
+			var d=new Date()
+			for (i = 0; i < x.length ;i++) {
+				text += x.elements[i].value+"<br>";		
+			}
+			document.getElementById("nana").innerHTML += "<a href=bill.html>"+Date()+"</a>";
+
+			document.getElementById("nana").innerHTML +="<a href=bill.html>"+text()+"</a>";		
+		}+
+		
+		</script>
+	<
+		<footer id="copyRight">
+		<script src="su.js"></script>
+			
+
+	</body>
+</html>

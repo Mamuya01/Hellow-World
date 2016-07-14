@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <title>Bills</title>
+	  <link type="text/css" rel="stylesheet" href="sua.css">
+	  </head>
+	  <body>
+	  
+	  <h3>SOKOINE UNIVERSITY INSURANCE<h3>
+	  <form id="myname">
+		  Customer Name: <input type="text" name="fname" value=" ">
+		</form>
+		<form id="cntr">
+		  Contribution: <input type="text" name="fname" value=" ">
+		</form>
+
+		<form id="mybills">
+		  Bills: <input type="text" name="favcolor" value=" ">
+		</form>
+
+		<button type="button" onclick="myFunction()">Save</button><br>
+		<button type="cancel" onclick="javascript:myFunction(txt);">Cancel</button>
+
+		 <table >
+			<td id="b"></td>
+			<td id="b"></td>
+			<td id="b"></td>
+		 </table>
+
+		<script>
+		function myFunction() {
+			var s = document.forms['myname'];
+			var txt2 = "";
+			var i;
+			for (i = 0; i < s.length; i++) {
+				txt2 = txt2 +  s[i].value + "<br>";
+			}
+		
+			document.getElementById("b").innerHTML += txt2;
+			var x = document.forms['cntr'];
+			var txt = "";
+			var i;
+			for (i = 0; i < x.length; i++) {
+				txt = txt +  x[i].value + "<br>";
+			}
+			document.getElementById("b").innerHTML += txt;
+
+			var y = document.forms['mybills'];
+			var txt1 = "";
+			var i;
+			for (i = 0; i < y.length; i++) {
+				txt1 = txt1 +  y[i].value + "<br>";
+			}
+			document.getElementById("b").innerHTML += txt1;
+			
+		}
+		</script>
+		<footer id="copyRight">
+		<script src="su.js"></script>
+			
+
+	</body>
+</html>

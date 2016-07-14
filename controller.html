@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+	  <title>Insurance controller</title>
+	</head>
+		<h1>SOKOINE UNIVERSITY INSURANCE<h1>
+		<link type="text/css" rel="stylesheet" href="sua.css">
+
+	<body>
+		<h3>Customer Services
+		<div id="main">
+			
+			<form id="f1">
+			
+			Name:<input type="text" name="fname" value=" "><br><br>
+			Add Bills:<input type="text" name="fname" value=" "><br><br>
+		</form> 
+
+		<button onclick="formList()">Save</button>
+		
+		
+		<option id="list">
+		<p id="ad"></p>
+		
+		</option>
+		
+		<p id="nana"></p>
+		
+		
+		<script>
+		
+		function formList() {
+			var x = document.forms["f1"];
+			var xy=document.createElement('li');
+			var y=document.createTextNode("mmnjjnchjsnj");
+			xy.appendChild(y);
+			var text = [];
+			var i;
+			var d=new Date()
+			for (i = 0; i < x.length ;i++) {
+				text += x.elements[i].value+"<br>";
+				
+		
+			}
+			document.getElementById("list").innerHTML +=text;
+			document.getElementById("list").innerHTML +=Date();
+
+			
+			
+		
+		}
+		
+		</script>
+	
+		</div>
+			<footer id="copyRight">
+			<script src="su.js"></script>
+			
+
+	</body>
+</html>
